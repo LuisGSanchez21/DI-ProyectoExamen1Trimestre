@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>TIENDA DE CAMARAS GENERICAS</h1>
+        <div>
+            <button popovertarget>Categories</button>
+            <div class="Categories" popover>
+                <ul>
+                    <a href=""><li>Camera</li></a>
+                    <a href=""><li>DSLR</li></a>
+                    <a href=""><li>Mirrorless</li></a>
+                    <a href=""><li>Point-and-shoot</li></a>
+                    <a href=""><li>Lens</li></a>
+                    <a href=""><li>Megapixels</li></a>
+                    <a href=""><li>ISO</li></a>
+                    <a href=""><li>Shutter Speed</li></a>
+                    <a href=""><li>Aperture</li></a>
+                    <a href=""><li>4k Video</li></a>
+                </ul>
+            </div>
+        </div>
+        <button>Cambiar de vista</button>
+    </header>
+    <div class="menu">
+
+    </div>
+    <news-viewer></news-viewer>
+
+    <template id="article-template" class="grid-container">
+        <div class="article grid-item">
+            <a href=""><h3 class="title"></h3></a>
+            <p><strong>Titulo:</strong> <span class="description"></span></p>
+            <p class="short_description"></p>
+            <relative-time class="date" />
+            <hr>
+            <hr>
+        </div>
+    </template>
+    
+</body>
+
+<script src="script.js"></script>
+</html>
