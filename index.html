@@ -31,14 +31,15 @@
     <div class="menu">
 
     </div>
-    <news-viewer></news-viewer>
-
-    <template id="article-template" class="grid-container">
-        <div class="article grid-item">
+    <product-viewer></product-viewer>
+    
+    <template id="product-template" class="grid-container">
+        <div class="product grid-item">
+            <img src="" class="img"/>
             <a href=""><h3 class="title"></h3></a>
-            <p><strong>Titulo:</strong> <span class="description"></span></p>
             <p class="short_description"></p>
-            <relative-time class="date" />
+            <p class="price"></p>
+            <relative-time class="date"></relative-time>
             <hr>
             <hr>
         </div>
