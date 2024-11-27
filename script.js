@@ -78,46 +78,6 @@ class Card extends HTMLElement {
 
 customElements.define("product-card", Card);
 
-class RelativeTime extends HTMLElement {
-  constructor() {
-    super();
-  }
-  connectedCallback() {
-    this.render();
-    setInterval(() => this.render(), 1000);
-  }
-  render() {
-    const timeValue = this.getAttribute("time");
-    const time = timeValue ? new Date(Number(timeValue)).getTime() : Date.now();
-    const now = Date.now();
-    const diff = now - time;
-    const seconds = Math.floor(diff / 1000) || 1;
-    const minutes = Math.floor(diff / (1000 * 60));
-    const hours = Math.floor(diff / (1000 * 60 * 60));
-    const days = Math.floor(hours / 24);
-    const months = Math.floor(days / 30);
-    const years = Math.floor(months / 12);
-
-    let aux = "...";
-    if (months >= 12) {
-      aux = `Hace ${years} año${years > 1 ? "s" : ""}`;
-    } else if (days > 30 && months >= 1) {
-      aux = `Hace ${months} mes${months > 1 ? "es" : ""}`;
-    } else if (days >= 1) {
-      aux = `Hace ${days} día${days > 1 ? "s" : ""}`;
-    } else if (hours >= 1) {
-      aux = `Hace ${hours} hora${hours > 1 ? "s" : ""}`;
-    } else if (minutes >= 1) {
-      aux = `Hace ${minutes} minuto${minutes > 1 ? "s" : ""}`;
-    } else if (seconds >= 1) {
-      aux = `Hace ${seconds} segundo${seconds > 1 ? "s" : ""}`;
-    }
-
-    this.textContent = aux;
-  }
-}
-customElements.define("relative-time", RelativeTime);
-
 class CustomCart extends HTMLElement {
   constructor() {
     super();
