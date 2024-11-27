@@ -96,7 +96,7 @@ class CustomCart extends HTMLElement {
       const cartContent = document.importNode(template.content, true);
       cartContent.querySelector(".title").textContent = product.title;
       cartContent.querySelector(".price").textContent = product.price;
-      cartContent.querySelector("img").src = product.image;
+      cartContent.querySelector(".img").src = product.image;
 
       });
 
