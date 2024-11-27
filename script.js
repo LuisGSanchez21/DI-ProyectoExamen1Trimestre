@@ -37,7 +37,7 @@ class Card extends HTMLElement {
 
   renderProducts(products) {
     const template = document.getElementById("product-template");
-    this.innerHTML = ""; // Clear existing content
+    this.innerHTML = "";
 
     products.forEach((product) => {
       const productContent = document.importNode(template.content, true);
@@ -86,12 +86,6 @@ class RelativeTime extends HTMLElement {
     this.render();
     setInterval(() => this.render(), 1000);
   }
-  static get observedAttributes() {
-    return ["time"];
-  }
-  attributeChangedCallback(name, oldValue, newValue) {
-    this.render();
-  }
   render() {
     const timeValue = this.getAttribute("time");
     const time = timeValue ? new Date(Number(timeValue)).getTime() : Date.now();
@@ -136,7 +130,7 @@ class CustomCart extends HTMLElement {
   render() {
     const cartItems = JSON.parse(localStorage.getItem('products')) || [];
     const template = document.getElementById("cart-template");
-    this.innerHTML = ""; // Clear existing cart items
+    this.innerHTML = ""; 
 
     cartItems.forEach(product => {
       const cartContent = document.importNode(template.content, true);
@@ -144,23 +138,11 @@ class CustomCart extends HTMLElement {
       cartContent.querySelector(".price").textContent = product.price;
       cartContent.querySelector("img").src = product.image;
 
-      // Add event listener to remove item from cart
-      const removeButton = cartContent.querySelector(".remove");
-      removeButton.addEventListener("click", () => {
-        this.removeFromCart(item.id);
       });
 
       this.appendChild(cartContent);
-    });
+    };
   }
-
-  removeFromCart(id) {
-    let cartItems = JSON.parse(localStorage.getItem('products')) || [];
-    cartItems = cartItems.filter(item => item.id !== id);
-    localStorage.setItem('products', JSON.stringify(cartItems));
-    this.render(); // Re-render the cart
-  }
-}
 
 customElements.define("custom-cart", CustomCart);
 
