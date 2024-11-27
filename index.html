@@ -1,51 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
+
 <body>
     <header>
-        <h1>TIENDA DE CAMARAS GENERICAS</h1>
-        <div>
-            <button popovertarget>Categories</button>
-            <div class="Categories" popover>
-                <ul>
-                    <a href=""><li>Camera</li></a>
-                    <a href=""><li>DSLR</li></a>
-                    <a href=""><li>Mirrorless</li></a>
-                    <a href=""><li>Point-and-shoot</li></a>
-                    <a href=""><li>Lens</li></a>
-                    <a href=""><li>Megapixels</li></a>
-                    <a href=""><li>ISO</li></a>
-                    <a href=""><li>Shutter Speed</li></a>
-                    <a href=""><li>Aperture</li></a>
-                    <a href=""><li>4k Video</li></a>
-                </ul>
+        <div class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
+            <div>
+                <button class="fixed size-12 right-5 -top-0.5" popovertarget="popover-sc" id="anchor_2">
+                    <img src="img/shpping-cart-logo.png" class="fixed size-12 right-5 -top-0.5">
+                </button>
+                <div popover id="popover-sc" class="container mx-auto px-6 py-16">
+                    <h2 class="text-3xl">Cart</h2>
+                   <template id="cart-template">
+		<li class="p-2 w-full border-black border-b my-4">
+			<button class="remove absolute t-0">🗙</button>
+			<a href="">
+				<div class="flex justify-between items-center w-full">
+					<img src="" alt="" class="p-1 mx-4 ms-5 w-1/4 object-scale-down">
+					<div class="flex flex-col justify-between items-center w-1/2">
+						<p class="title w-full font-bold"></p>
+						<p class="price w-full text-lime-600"></p>
+					</div>
+				</div>
+			</a>
+		</li>
+	</template>
+                </div>
+            </div>
+            <img src="img/banner.jpg"
+                class="absolute inset-0 -z-10 size-full object-cover object-right md:object-center">
+            <div class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
+                aria-hidden="true">
+                <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
+                    style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+                </div>
+            </div>
+            <div class="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu"
+                aria-hidden="true">
+                <div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
+                    style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+                </div>
+            </div>
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="mx-auto max-w-2xl lg:mx-0">
+                    <h2 class=" text-5xl font-bold tracking-tight text-black sm:text-7xl">Camera Store</h2>
+                    <p class="mt-8 text-pretty text-lg font-medium text-black sm:text-xl/8">Bienvenido a esta tienda de
+                        Camaras!</p>
+                </div>
+                <div>
+                    <button
+                        class="bg-transparent hover:bg-black-500 text-black-700 font-semibold hover:text-blue-700 py-2  hover:border-transparent rounded px-6"
+                        id="anchor_1" popovertarget="popover">Categories</button>
+                    <div class="h-screen" id="popover" popover>
+                        <ul>
+                            <li class="hover:text-blue-700">Camera</li>
+
+                            <li class="hover:text-blue-700">DSLR</li>
+
+                            <li class="hover:text-blue-700">Mirrorless</li>
+
+                            <li class="hover:text-blue-700">Point-and-shoot</li>
+
+                            <li class="hover:text-blue-700">Lens</li>
+
+                            <li class="hover:text-blue-700">Megapixels</li>
+
+                            <li class="hover:text-blue-700">ISO</li>
+
+                            <li class="hover:text-blue-700">Shutter Speed</li>
+
+                            <li class="hover:text-blue-700">Aperture</li>
+
+                            <li class="hover:text-blue-700">4k Video</li>
+
+                        </ul>
+                    </div>
+                    <button onclick="cambiarVista()"
+                        class="bg-transparent hover:bg-black-500 text-black-700 font-semibold hover:text-blue-700 py-2 hover:border-transparent rounded">Cambiar
+                        de vista</button>
+                </div>
             </div>
         </div>
-        <button>Cambiar de vista</button>
     </header>
+
+
+
     <div class="menu">
 
     </div>
-    <product-viewer></product-viewer>
-    
-    <template id="product-template" class="grid-container">
-        <div class="product grid-item">
-            <img src="" class="img"/>
-            <a href=""><h3 class="title"></h3></a>
-            <p class="short_description"></p>
-            <p class="price"></p>
-            <relative-time class="date"></relative-time>
-            <hr>
-            <hr>
-        </div>
-    </template>
-    
-</body>
+    <main class="flex">
 
-<script src="script.js"></script>
+        <product-card class="grid-container-normal"></product-card>
+
+        <template id="product-template">
+            <article class="product grid-item">
+                <img src="" class="img">
+                <a href="camera.html">
+                    <h2 class="title"></h2>
+                    <p class="short_description"></p>
+                    <p class="price"></p>
+                </a>
+                <relative-time class="date"></relative-time>
+                <p class="description hidden"></p>
+                <p class="category"></p>
+                <p id="id" class="hidden id"></p>
+                <div class="px-6 pt-4 pb-2 tags">
+
+                </div>
+                <hr>
+                <hr>
+                <button popovertarget="popover-specs" class="bg-primary text-black px-6 py-3 hover:bg-blue-800"
+                    id="anchor_specs">Ver más</button>
+                <div id="popover-specs" popover>
+                    <product-card>
+                        <template id="card-template">
+                            <article>
+                                <img src="" class="c-img">
+                                <a href="camera.html">
+                                    <h2 class="c-title"></h2>
+                                    <p class="c-short_description"></p>
+                                    <p class="c-price"></p>
+                                </a>
+                                <relative-time class="c-date"></relative-time>
+                                <p class="c-description hidden"></p>
+                                <p class="c-category"></p>
+                                <p id="id" class="hidden c-id"></p>
+                                <div class="px-6 pt-4 pb-2 c-tags">
+                
+                                </div>
+                            </article>
+                        </template>
+                    </product-card>
+                </div>
+                <button class="add2cart bg-primary text-black px-6 py-3 hover:bg-blue-800">Add to Cart</button>
+                </div>
+            </article>
+        </template>
+
+    </main>
+    <footer class="bg-gray-800">
+        <div class="container mx-auto px-6 py-8 text-gray-400">
+            <div class="flex flex-col md:flex-row justify-between">
+                <p>&copy; 2024 MiEmpresa. Todos los derechos reservados.</p>
+                <div class="space-x-4">
+                    <a href="#" class="hover:text-white">Privacidad</a>
+                    <a href="#" class="hover:text-white">Términos</a>
+                    <a href="#" class="hover:text-white">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+<script type="module">
+    if (!("anchorName" in document.documentElement.style)) {
+        import("https://unpkg.com/@oddbird/css-anchor-positioning");
+    }
+</script>
+
 </html>
